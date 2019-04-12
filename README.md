@@ -2,7 +2,18 @@
 
 ## Overview
 
-This project is a Train Schedule Advanced application that works with firebase.  Open the PORTFOLIO PAGE [project start page](https://cnikolai.github.io/liri-node-app-/). Click on Train Scheduler.  Enter the information in the input fields.  Be sure to note the format of the inputs.  Edit puts the train information in the section below.  Edit this information.  Then click on submit and it will change your train information.  
+This project is a command line API lookup application.  This application uses three different APIs - spotify, bandsintown, and omdb.  Here is an example of the application running ![LIRI CLI](liri.gif).  
+
+## How to Use
+### Enter a command on the command line as follows: 
+- node liri.js spotify-this-song "I Want it That Way"
+- node liri.js movie-this Mrs. Doubtfire
+- node liri.js movie-this "Mrs. Doubtfire"
+- node liri.js concert-this Backstreet boys
+- node liri.js concert-this "Backstreet boys"
+- node liri.js movie-this
+- node liri.js spotify-this-song
+- node liri.js do-what-it-says (then, inside the random.txt file, enter a command as per above)
 
 - - -
 
@@ -14,7 +25,9 @@ Contributors and maintainers: Cynthia Nikolai
 
 ## Dependancies
   
-None
+axios
+node-spotify-api
+moment
 
 - - -
 

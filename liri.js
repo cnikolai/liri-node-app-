@@ -13,7 +13,7 @@ var spotify = new Spotify(keys.spotify);
 var command = process.argv[2];
 
 if (command === "do-what-it-says") {
-    fs.appendFile("log.txt", "do-what-it-says:", function(err) {
+    fs.appendFile("log.txt", "do-what-it-says: ", function(err) {
         if (err) {
             return console.log(err);
         }
@@ -37,6 +37,7 @@ if (command === "do-what-it-says") {
     
     switch (command) {
         case "concert-this":
+            var band = "";
            //if we didn't grab the args from the input file, then grab them from the command line
            if (argsdwis === "") {
                args = process.argv;
@@ -103,21 +104,25 @@ if (command === "do-what-it-says") {
            break;
         case "spotify-this-song":
         //if we didn't grab the args from the input file, then grab them from the command line
-        if (argsdwis === "") {
-           args = process.argv;
+        //console.log((argsdwis));
+
+        var song = "";
+        if (argsdwis !== "") {
+           //args = process.argv;
         //    if (args.length === 3) {
         //     song = undefined;
         //    }
-           song = args.slice(3).join(" ");
+           song = argsdwis;//args.slice(3).join(" ");
+           
         }
         // else {
         //     song = argsdwis;
         // }
-        //console.log(typeof(song));
+       // console.log((song));
            if (song === "") {
                song = "The Sign";
            }
-           console.log("song: " + song);
+           //console.log("song: " + song);
        
            fs.appendFile("log.txt", "spotify-this: "+song+"\n", function(err) {
             if (err) {
@@ -166,6 +171,7 @@ if (command === "do-what-it-says") {
            });
            break;
         case "movie-this":
+        var movie = "";
         //if we didn't grab the args from the input file, then grab them from the command line
         if (argsdwis === "") {
            args = process.argv;
@@ -177,7 +183,7 @@ if (command === "do-what-it-says") {
            if (movie === "") {
                movie = "Mr. Nobody";
            }
-           fs.appendFile("log.txt", "movie-this,"+movie, function(err) {
+           fs.appendFile("log.txt", "movie-this,"+movie+ "\n", function(err) {
             if (err) {
                 return console.log(err);
             }
@@ -225,7 +231,7 @@ switch (command) {
     }
 
     //console.log("band: " + band);
-    fs.appendFile("log.txt", "concert-this,"+band, function(err) {
+    fs.appendFile("log.txt", "concert-this,"+band+ "\n", function(err) {
         if (err) {
             return console.log(err);
         }
@@ -289,11 +295,13 @@ switch (command) {
  else {
      song = argsdwis;
  }
-    if (song === undefined) {
+ //console.log(typeof(song));
+    if (song === "") {
         song = "The Sign";
     }
+    //console.log("song: " + song);
 
-    fs.appendFile("log.txt", "spotify-this,"+song, function(err) {
+    fs.appendFile("log.txt", "spotify-this,"+song+ "\n", function(err) {
         if (err) {
             return console.log(err);
         }
@@ -349,10 +357,10 @@ switch (command) {
  else {
      movie = argsdwis;
  }
-    if (movie === undefined) {
+    if (movie === "") {
         movie = "Mr. Nobody";
     }
-    fs.appendFile("log.txt", "movie-this,"+movie, function(err) {
+    fs.appendFile("log.txt", "movie-this,"+movie + "\n", function(err) {
         if (err) {
             return console.log(err);
         }

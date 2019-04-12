@@ -1,16 +1,16 @@
-spotify-this-song,"I Want it That Way"
+node liri.js spotify-this-song "I Want it That Way"
+node liri.js movie-this Mrs. Doubtfire
+node liri.js movie-this "Mrs. Doubtfire"
+node liri.js concert-this Backstreet boys
+node liri.js concert-this "Backstreet boys"
+node liri.js movie-this
+node liri.js spotify-this-song
 
-movie-this,Mrs. Doubtfire
-
-concert-this,"Backstreet boys"
-
-movie-this
-
-spotify-this-song
-
-do-what-it-says
+node liri.js do-what-it-says
     spotify-this-song,"I Want it That Way"
     movie-this,Mrs. Doubtfire
+    movie-this,"Mrs. Doubtfire"
     concert-this,"Backstreet boys"
+    concert-this,Backstreet boys
     movie-this
     spotify-this-song
